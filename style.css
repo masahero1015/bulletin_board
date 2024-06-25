@@ -1,0 +1,93 @@
+body {
+    background-color: #DCFFF0;
+    margin: 0;
+}
+
+h1 {
+    margin-left: 30px;
+}
+
+form {
+    background-color: #b3ffde;
+    height: 230px;
+    margin: 0 10px 0;
+    border-radius: 20px;
+}
+
+.posting-form {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+#userlabel {
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+#username {
+    border-color: #41E9CD;
+    width: 200px;
+    height: 25px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#username:focus {
+    outline-color: #41E9CD;
+}
+
+#centence {
+    border-color: #41E9CD;
+    width: 550px;
+    height: 80px;
+    margin-left: 20px;
+    font-size: 18.55px;
+    border-radius: 5px;
+    resize: none;
+}
+
+#centence:focus {
+    outline-color: #41E9CD;
+}
+
+#btnId {
+    margin: 0 auto 0 533px;
+}
+
+#posting-container {
+    background-color: #b3ffde;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    margin: 20px 10px 0;
+    border-radius: 10px;
+}
+
+#posting-title {
+    text-align: left;
+    padding-left: 20px;
+    margin: 0 0 5px;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #FFFFFF;
+    padding-left: 3px;
+    list-style: none;
+    margin: 30px 20px 0;
+    border-radius: 10px;
+}
+
+.first {
+    margin-top: 0;
+}
+
+.editBtn {
+    margin-top: 4px;
+    margin-left: 20px;
+    margin-right: 3px;
+}
