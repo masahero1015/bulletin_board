@@ -37,14 +37,17 @@ form {
     outline-color: #41E9CD;
 }
 
-#centence {
+textarea {
     border-color: #41E9CD;
     width: 550px;
     height: 80px;
-    margin-left: 20px;
     font-size: 18.55px;
     border-radius: 5px;
     resize: none;
+}
+
+#centence {
+    margin-left: 20px;
 }
 
 #centence:focus {
@@ -75,7 +78,7 @@ ul {
 }
 
 li {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     padding-left: 3px;
     list-style: none;
     margin: 30px 20px 0;
@@ -90,4 +93,8 @@ li {
     margin-top: 4px;
     margin-left: 20px;
     margin-right: 3px;
+}
+
+.detailArea {
+    margin-left: 20px;
 }
