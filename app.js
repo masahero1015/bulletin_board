@@ -10,17 +10,22 @@ form.addEventListener("submit", (event) => {
     const centence = document.getElementById('centence');
 
     const newtweet = document.createElement('li');
-    if(zero === 0) {
+    if (zero === 0) {
         newtweet.className = 'first';
         zero++;
     }
+
+    // View posting
     newtweet.innerHTML = `名前：${username.value}<br>${centence.value}`;
     posting.appendChild(newtweet);
 
+    // Make editBtn
     const editBtn = document.createElement('button');
     editBtn.innerHTML = '編集';
     editBtn.className = 'editBtn';
     posting.appendChild(editBtn);
+
+    // Function when editBtn is pressed
     editBtn.addEventListener('click', (e) => {
         const detail = e.target.previousElementSibling;
         const nameSize = detail.innerHTML.indexOf('<br>');
@@ -31,9 +36,9 @@ form.addEventListener("submit", (event) => {
         const detailArea = document.createElement('textarea');
         detailArea.innerHTML = sentence.substring(nameSize + 4);
         detailArea.className = 'detailArea'
-        e.target.previousElementSibling.insertAdjacentElement('afterend',detailArea);
+        e.target.previousElementSibling.insertAdjacentElement('afterend', detailArea);
 
-
+        // Make editComp
         const editComp = document.createElement('button');
         editComp.innerHTML = '編集完了';
         editComp.className = 'editBtn';
@@ -42,13 +47,13 @@ form.addEventListener("submit", (event) => {
         e.target.insertAdjacentElement('afterend', editComp);
         e.target.style.display = 'none';
         e.target.nextElementSibling.nextElementSibling.style.display = 'none';
-
-
+        
+        // Function when editComp is pressed
         editComp.addEventListener('click', (c) => {
             const editSentence = c.target.previousElementSibling.previousElementSibling;
             const list = editSentence.previousElementSibling;
 
-            let lisComp = list.innerHTML +  editSentence.value;
+            let lisComp = list.innerHTML + editSentence.value;
             console.log(lisComp);
 
             e.target.style.display = 'inline';
@@ -57,13 +62,16 @@ form.addEventListener("submit", (event) => {
             c.target.remove();
         })
     });
-    
+
+    // Make deleteBtn
     const deleteBtn = document.createElement('button');
     deleteBtn.innerHTML = '削除';
     posting.appendChild(deleteBtn);
+
+    // Function when deletebutton is pressed
     deleteBtn.addEventListener('click', (d) => {
         const lis = document.querySelectorAll('li');
-        
+
         const targetLis = d.target.previousElementSibling.previousElementSibling;
         const targetEdit = d.target.previousElementSibling;
         const lisArray = Array.from(lis);
@@ -75,13 +83,14 @@ form.addEventListener("submit", (event) => {
         if (lis.length === 1) {
             zero = 0;
         }
-
-        console.log(lis);
-        console.log(lisNum);
         
-        
+        // Delete Post
         targetLis.remove();
         targetEdit.remove();
         d.target.remove();
     });
+
+    // Reset content when posting
+    username.value = '';
+    centence.value = '';
 });
