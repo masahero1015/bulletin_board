@@ -48,13 +48,8 @@ form.addEventListener("submit", (event) => {
             const editSentence = c.target.previousElementSibling.previousElementSibling;
             const list = editSentence.previousElementSibling;
 
-            console.log(editSentence.value);
-            console.log(list.innerHTML);
-
             let lisComp = list.innerHTML +  editSentence.value;
             console.log(lisComp);
-
-            list.innerHTML = lisComp;
 
             e.target.style.display = 'inline';
             e.target.nextElementSibling.nextElementSibling.style.display = 'inline';
@@ -67,10 +62,26 @@ form.addEventListener("submit", (event) => {
     deleteBtn.innerHTML = '削除';
     posting.appendChild(deleteBtn);
     deleteBtn.addEventListener('click', (d) => {
-        const deleteLi = d.target.previousElementSibling.previousElementSibling;
-        const deleteEdit = d.target.previousElementSibling;
-        deleteLi.remove();
-        deleteEdit.remove();
+        const lis = document.querySelectorAll('li');
+        
+        const targetLis = d.target.previousElementSibling.previousElementSibling;
+        const targetEdit = d.target.previousElementSibling;
+        const lisArray = Array.from(lis);
+        const lisNum = lisArray.indexOf(targetLis);
+
+        if (lisNum === 0 && lis.length > 1) {
+            lis[1].className = 'first';
+        }
+        if (lis.length === 1) {
+            zero = 0;
+        }
+
+        console.log(lis);
+        console.log(lisNum);
+        
+        
+        targetLis.remove();
+        targetEdit.remove();
         d.target.remove();
     });
 });
