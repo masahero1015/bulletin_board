@@ -15,17 +15,15 @@ form.addEventListener("submit", (event) => {
         zero++;
     }
 
-    // 投稿の表示
     newtweet.innerHTML = `名前：${username.value}<br>${centence.value}`;
     posting.appendChild(newtweet);
 
-    // 編集ボタンを作る
+    // 編集ボタン
     const editBtn = document.createElement('button');
     editBtn.innerHTML = '編集';
     editBtn.className = 'editBtn';
     posting.appendChild(editBtn);
 
-    // 編集ボタンを押した時
     editBtn.addEventListener('click', (e) => {
         const detail = e.target.previousElementSibling;
         const nameSize = detail.innerHTML.indexOf('<br>');
@@ -39,7 +37,7 @@ form.addEventListener("submit", (event) => {
         detailArea.required = true;
         e.target.previousElementSibling.insertAdjacentElement('afterend', detailArea);
 
-        // 編集完了ボタンを作る
+        // 編集完了ボタン
         const editComp = document.createElement('button');
         editComp.innerHTML = '編集完了';
         editComp.className = 'editBtn';
@@ -58,7 +56,6 @@ form.addEventListener("submit", (event) => {
             }
         })
 
-        // 編集完了ボタンを押した時
         editComp.addEventListener('click', () => {
             const editSentence = e.target.previousElementSibling;
             const list = editSentence.previousElementSibling;
@@ -85,12 +82,11 @@ form.addEventListener("submit", (event) => {
         })
     });
 
-    // 削除ボタンを作る
+    // 削除ボタン
     const deleteBtn = document.createElement('button');
     deleteBtn.innerHTML = '削除';
     posting.appendChild(deleteBtn);
 
-    // 削除ボタンを押したとき
     deleteBtn.addEventListener('click', (d) => {
         const lis = document.querySelectorAll('li');
 
@@ -111,7 +107,6 @@ form.addEventListener("submit", (event) => {
         d.target.remove();
     });
 
-    // 投稿内容をリセット
     username.value = '';
     centence.value = '';
 });
