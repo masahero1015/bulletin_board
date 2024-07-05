@@ -53,6 +53,8 @@ form.addEventListener("submit", (event) => {
         allBtn.forEach((Btn) => {
             if (Btn !== editComp) {
                 Btn.disabled = true;
+                username.disabled = true;
+                centence.disabled = true;
             }
         })
 
@@ -76,6 +78,8 @@ form.addEventListener("submit", (event) => {
             allBtn.forEach((Btn) => {
                 if (Btn.disabled) {
                     Btn.disabled = false;
+                    username.disabled = false;
+                    centence.disabled = false;
                 }
             })
         })

@@ -15,6 +15,9 @@
 
 ![bulletin_board2](/image/image2.png)
 
+編集ボタンを押したとき
+![bulletin_board3](/image/image3.png)
+
 ## Coding languages
 
 - HTML / CSS
