@@ -49,6 +49,13 @@ form.addEventListener("submit", (event) => {
         e.target.style.display = 'none';
         e.target.nextElementSibling.nextElementSibling.style.display = 'none';
 
+        const allBtn = document.querySelectorAll('button');
+        allBtn.forEach((Btn) => {
+            if (Btn !== editComp) {
+                Btn.disabled = true;
+            }
+        })
+
         // 編集完了ボタンを押した時
         editComp.addEventListener('click', () => {
             const editSentence = e.target.previousElementSibling;
@@ -65,6 +72,12 @@ form.addEventListener("submit", (event) => {
             } else {
                 alert('編集内容を記入してください');
             }
+
+            allBtn.forEach((Btn) => {
+                if (Btn.disabled) {
+                    Btn.disabled = false;
+                }
+            })
         })
     });
 
